@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "run_molecule.py", line 13, in <module>
+    from openforcefield.typing.engines.smirnoff import *
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openforcefield/typing/engines/smirnoff/__init__.py", line 3, in <module>
+    from openforcefield.typing.engines.smirnoff.forcefield import *
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openforcefield/typing/engines/smirnoff/forcefield.py", line 36, in <module>
+    from openforcefield.utils import generateTopologyFromOEMol, get_data_filename
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openforcefield/utils/__init__.py", line 3, in <module>
+    from openforcefield.utils.utils import *
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openforcefield/utils/utils.py", line 24, in <module>
+    import openeye.oechem
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openeye/oechem.py", line 34, in <module>
+    _oechem = swig_import_helper()
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openeye/oechem.py", line 31, in swig_import_helper
+    _oechem = libs.OEGetModule('_oechem212')
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/openeye/libs/__init__.py", line 112, in OEGetModule
+    mod = imp.load_module(name, fobj, pathname, desc)
+ImportError: /lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /home/brma3379/miniconda/lib/python2.7/site-packages/openeye/libs/python2.7-ucs4-linux-x64-g++4.x/_oechem212.so)

@@ -1,0 +1,13 @@
+/tmp/1508125553.918606.shell: line 18: 0: command not found
+/home/brma3379/miniconda/lib/python2.7/site-packages/numexpr/cpuinfo.py:42: UserWarning: [Errno 2] No such file or directory
+  warnings.warn(str(e), UserWarning, stacklevel=stacklevel)
+Traceback (most recent call last):
+  File "run_molecule.py", line 78, in <module>
+    simulation = Simulation(pdb.topology, system, integrator, platform, properties)
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/simtk/openmm/app/simulation.py", line 105, in __init__
+    self.context = mm.Context(self.system, self.integrator, platform, platformProperties)
+  File "/home/brma3379/miniconda/lib/python2.7/site-packages/simtk/openmm/openmm.py", line 4066, in __init__
+    this = _openmm.new_Context(*args)
+Exception: Error launching CUDA compiler: 256
+gcc: No such file or directory
+

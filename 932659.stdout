@@ -1,0 +1,195 @@
+Sender: LSF System <lsfadmin@ls06>
+Subject: Job 932659: <cychex_lj_vanilla> in cluster <lila> Done
+
+Job <cychex_lj_vanilla> was submitted from host <lilac> by user <brma3379> in cluster <lila> at Wed Oct 18 20:33:10 2017.
+Job was executed on host(s) <ls06>, in queue <gpuqueue>, as user <brma3379> in cluster <lila> at Wed Oct 18 20:33:11 2017.
+</home/brma3379> was used as the home directory.
+</home/brma3379/LJ-neat-liquids> was used as the working directory.
+Started at Wed Oct 18 20:33:11 2017.
+Terminated at Wed Oct 18 20:33:33 2017.
+Results reported at Wed Oct 18 20:33:33 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J cychex_lj_vanilla
+#BSUB -n 1
+#BSUB -q gpuqueue 
+#BSUB -gpu "num=1"
+#BSUB -W 10:00
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -u brma3379@colorado.edu
+#BSUB -B
+
+cd $LS_SUBCWD
+export OE_DIR=/home/brma3379/.OpenEye
+export PATH=/home/brma3379/miniconda/bin:$PATH
+#export LD_LIBRARY_PATH=/home/brma3379/miniconda/gcc-4.9.0/lib:
+module load cuda
+echo $PATH
+conda list
+python run_molecule.py cyclohexane C1CCCCC1 250 [#6X4:1] epsilon rmin_half 0.1094 1.9080 & 
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.37 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     2.00 GB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   22 sec.
+    Turnaround time :                            23 sec.
+
+The output (if any) follows:
+
+/usr/local/cuda-8.0/bin:/home/brma3379/miniconda/bin:/admin/lsf/10.1/linux3.10-glibc2.17-x86_64/bin:/admin/lsf/10.1/linux3.10-glibc2.17-x86_64/etc:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin/:/opt/puppetlabs/bin:/home/brma3379/miniconda/bin/
+# packages in environment at /home/brma3379/miniconda:
+#
+alabaster                 0.7.10                     py_0    conda-forge
+ambermini                 16.16.0                       7    omnia
+anaconda-client           1.6.3                    py27_0  
+asn1crypto                0.22.0                   py27_0  
+babel                     2.4.0                    py27_0    conda-forge
+backports_abc             0.5                      py27_0    conda-forge
+beautifulsoup4            4.6.0                    py27_0  
+bzip2                     1.0.6                         1    conda-forge
+cairo                     1.14.8                        0  
+certifi                   2017.7.27.1              py27_0    conda-forge
+cffi                      1.10.0                   py27_0  
+chardet                   3.0.4                    py27_0  
+cloog                     0.18.0                        0    anaconda
+clyent                    1.2.2                    py27_0  
+conda                     4.3.30           py27h6ae6dc7_0  
+conda-build               2.1.17                   py27_0  
+conda-env                 2.6.0                h36134e3_1  
+conda-verify              2.0.0                    py27_0  
+contextlib2               0.5.5                    py27_0  
+cryptography              1.8.1                    py27_0  
+curl                      7.49.0                        1  
+cycler                    0.10.0                   py27_0    conda-forge
+cython                    0.26                     py27_0  
+decorator                 4.1.2                    py27_0    conda-forge
+docutils                  0.14                     py27_0    conda-forge
+enum34                    1.1.6                    py27_0  
+feedparser                5.2.1                    py27_0  
+fftw3f                    3.3.4                         2    omnia
+filelock                  2.0.7                    py27_0  
+fontconfig                2.12.1                        3  
+freetype                  2.5.5                         2  
+functools32               3.2.3.2                  py27_1    conda-forge
+futures                   3.1.1                    py27_0  
+gettext                   0.19.7                        1    conda-forge
+glib                      2.50.2                        1  
+gmp                       6.1.2                hb3b607b_0    anaconda
+graphite2                 1.3.9                         0    conda-forge
+harfbuzz                  0.9.39                        2  
+hdf4                      4.2.12                        1  
+hdf5                      1.8.17                        2  
+icu                       58.1                          1    conda-forge
+idna                      2.5                      py27_0  
+imagesize                 0.7.1                    py27_0    conda-forge
+ipaddress                 1.0.18                   py27_0  
+isl                       0.12.2                        0    anaconda
+jinja2                    2.9.6                    py27_0  
+jpeg                      9b                            0    conda-forge
+libffi                    3.2.1                         1  
+libgcc                    7.2.0                h69d50b8_2  
+libgcc-ng                 7.2.0                h7cc24e2_2    anaconda
+libgfortran               3.0.0                         1  
+libiconv                  1.14                          4    conda-forge
+libnetcdf                 4.4.1                         1  
+libpng                    1.6.28                        1    conda-forge
+libstdcxx-ng              7.2.0                h7a57d05_2    anaconda
+libtiff                   4.0.6                         7    conda-forge
+libxml2                   2.9.5                         0    conda-forge
+libxslt                   1.1.29                        5    conda-forge
+lxml                      3.8.0                    py27_0    conda-forge
+lzo                       2.06                          0  
+markupsafe                1.0                      py27_0  
+matplotlib                1.5.1               np111py27_0  
+mdtraj                    1.9.1                    py27_0    omnia
+mkl                       2017.0.3                      0  
+mpc                       1.0.3                hf803216_4    anaconda
+mpfr                      3.1.5                h12ff648_1    anaconda
+netcdf4                   1.2.4               np111py27_0  
+networkx                  1.11                     py27_0    conda-forge
+nose                      1.3.7                     <pip>
+numexpr                   2.6.2               np111py27_0  
+numpy                     1.11.3                   py27_0  
+numpydoc                  0.7.0                    py27_0    conda-forge
+OpenEye-toolkits          2017.6.1                  <pip>
+OpenEye-toolkits-python2.7-ucs4-linux-x64 2017.6.1                  <pip>
+openforcefield            0.0.2                    py27_1    omnia
+openmm                    7.1.1                    py27_0    omnia
+openmmtools               0.13.0                   py27_0    omnia
+openmoltools              0.8.1                    py27_0    omnia
+openssl                   1.0.2l                        0  
+packaging                 16.8                     py27_0  
+packmol                   1.0.0                         2    omnia
+pandas                    0.20.3                   py27_1    conda-forge
+pango                     1.40.3                        1  
+parmed                    2.7.3                    py27_1    omnia
+patchelf                  0.9                           0  
+pcre                      8.39                          0    conda-forge
+pip                       9.0.1                    py27_1  
+pixman                    0.34.0                        0    conda-forge
+pkginfo                   1.4.1                    py27_0  
+pycairo                   1.10.0                   py27_0  
+pycosat                   0.6.2                    py27_0  
+pycparser                 2.17                     py27_0  
+pycrypto                  2.6.1                    py27_6  
+pygments                  2.2.0                    py27_0    conda-forge
+pymbar                    3.0.1.beta0         np111py27_0    omnia
+pyopenssl                 17.0.0                   py27_0  
+pyparsing                 2.1.4                    py27_0  
+pyqt                      4.11.4                   py27_2    conda-forge
+pytables                  3.3.0               np111py27_0  
+python                    2.7.13                        0  
+python-dateutil           2.6.1                    py27_0  
+pytz                      2017.2                   py27_0  
+pyxb                      1.2.4                    py27_0    omnia
+pyyaml                    3.12                     py27_0  
+qt                        4.8.7                         4  
+readline                  6.2                           2  
+requests                  2.14.2                   py27_0  
+ruamel_yaml               0.11.14                  py27_1  
+scipy                     0.19.0              np111py27_0  
+scripttest                1.3                       <pip>
+setuptools                27.2.0                   py27_0  
+singledispatch            3.4.0.3                  py27_0    conda-forge
+sip                       4.18                     py27_1    conda-forge
+six                       1.10.0                   py27_0  
+smarty                    0.1.5                    py27_0    omnia
+snowballstemmer           1.2.1                    py27_0    conda-forge
+solvationtoolkit          0.4.2                    py27_0    omnia
+sphinx                    1.6.3                    py27_0    conda-forge
+sphinxcontrib-websupport  1.0.1                    py27_0    conda-forge
+sqlite                    3.13.0                        0  
+ssl_match_hostname        3.5.0.1                  py27_1    conda-forge
+subprocess32              3.2.7                    py27_0    conda-forge
+thermopyl                 1.0.1                    py27_0    choderalab
+tk                        8.5.18                        0  
+tornado                   4.5.2                    py27_0    conda-forge
+typing                    3.6.2                    py27_0    conda-forge
+wheel                     0.29.0                   py27_0  
+xz                        5.2.3                         0    conda-forge
+yaml                      0.1.6                         0  
+zlib                      1.2.8                         3  
+/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /home/brma3379/miniconda/lib/python2.7/site-packages/openeye/libs/python2.7-ucs4-linux-x64-g++4.x/_oechem212.so)
+Warning: Cannot import openeye toolkit; not all functionality will be available.
+
+
+PS:
+
+Read file <932659.stderr> for stderr output of this job.
+

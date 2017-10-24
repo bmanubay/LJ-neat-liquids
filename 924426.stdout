@@ -1,0 +1,60 @@
+Sender: LSF System <lsfadmin@ls01>
+Subject: Job 924426: <cychex_lj_vanilla> in cluster <lila> Exited
+
+Job <cychex_lj_vanilla> was submitted from host <lilac> by user <brma3379> in cluster <lila> at Mon Oct 16 18:10:44 2017.
+Job was executed on host(s) <ls01>, in queue <gpuqueue>, as user <brma3379> in cluster <lila> at Mon Oct 16 18:10:44 2017.
+</home/brma3379> was used as the home directory.
+</home/brma3379/LJ-neat-liquids> was used as the working directory.
+Started at Mon Oct 16 18:10:44 2017.
+Terminated at Mon Oct 16 18:10:45 2017.
+Results reported at Mon Oct 16 18:10:45 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J cychex_lj_vanilla
+#BSUB -n 1
+#BSUB -q gpuqueue 
+#BSUB -gpu "num=1"
+#BSUB -W 10:00
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -L /bin/bash
+#BSUB -u brma3379@colorado.edu
+#BSUB -B
+
+cd $LS_SUBCWD
+export OE_DIR=/home/brma3379/.OpenEye
+export PATH=/home/brma3379/minconda/bin:$PATH
+module load cuda
+echo $PATH
+python run_molecule.py cyclohexane C1CCCCC1 250 [#6X4:1] epsilon rmin_half 0.1094 1.9080 & $LSB_JOBINDEX
+
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   0.29 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     2.00 GB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              2
+    Max Threads :                                2
+    Run time :                                   1 sec.
+    Turnaround time :                            1 sec.
+
+The output (if any) follows:
+
+/usr/local/cuda-8.0/bin:/home/brma3379/minconda/bin:/admin/lsf/10.1/linux3.10-glibc2.17-x86_64/etc:/admin/lsf/10.1/linux3.10-glibc2.17-x86_64/bin:/bin:/usr/bin/:/usr/mbin:/local/bin:/usr/local:/usr/ucb:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin/:/opt/puppetlabs/bin
+
+
+PS:
+
+Read file <924426.stderr> for stderr output of this job.
+

@@ -1,0 +1,5 @@
+/tmp/1508192074.924435.shell: line 19: 0: command not found
+Traceback (most recent call last):
+  File "run_molecule.py", line 3, in <module>
+    import simtk.openmm as mm
+ImportError: No module named simtk.openmm

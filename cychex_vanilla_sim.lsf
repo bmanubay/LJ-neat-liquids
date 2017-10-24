@@ -1,0 +1,18 @@
+#!/bin/sh
+#BSUB -J cychex_lj_vanilla
+#BSUB -n 1
+#BSUB -q gpuqueue 
+#BSUB -gpu "num=1"
+#BSUB -W 10:00
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -u brma3379@colorado.edu
+#BSUB -B
+
+cd $LS_SUBCWD
+export OE_DIR=/home/brma3379/.OpenEye
+export PATH=/home/brma3379/miniconda/bin:$PATH
+export LD_LIBRARY_PATH=/home/brma3379/miniconda/lib:$LD_LIBRARY_PATH
+module load cuda
+echo $PATH
+python run_molecule.py cyclohexane C1CCCCC1 250 [#6X4:1] epsilon rmin_half 0.1094 1.9080 & 
