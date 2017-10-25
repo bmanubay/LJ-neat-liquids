@@ -4,7 +4,7 @@ import simtk.openmm as mm
 from simtk.unit import *
 import numpy as np
 from mdtraj.reporters import NetCDFReporter
-from smarty import *
+#from smarty import *
 import sys
 import numpy as np
 from simtk.openmm.app import *
@@ -47,7 +47,8 @@ for mol2file in mol2files:
 name = sys.argv[1]+'_'+sys.argv[3]
 filename = 'packmol_boxes/'+name+'.pdb'
 pdb = PDBFile(filename)
-forcefield = ForceField(get_data_filename('forcefield/smirnoff99Frosst.ffxml'))
+FF_filename = get_data_filename('forcefield/smirnoff99Frosst.ffxml')
+forcefield = ForceField(FF_filename)
 
 params = forcefield.getParameter(smirks='[#1:1]-[#8]')
 params['rmin_half']='0.01'
