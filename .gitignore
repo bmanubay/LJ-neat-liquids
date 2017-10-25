@@ -1,0 +1,9 @@
+# ignore inputs and outputs from LSF jobs
+*.stdout
+*.stderr
+*.lsf
+
+# ignore trajectory files
+*.nc
+*.h5
+
